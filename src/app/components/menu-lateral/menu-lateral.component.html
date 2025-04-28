@@ -1,1 +1,8 @@
-<p>menu-lateral works!</p>
+<aside class="sidebar">
+  <button mat-icon-button aria-label="Expandir menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div class="nav-dots">
+    <div class="dot" *ngFor="let dot of [0, 1, 2, 3, 4]"></div>
+  </div>
+</aside>
