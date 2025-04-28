@@ -1,0 +1,10 @@
+@use "sass:map";
+@use "../../../theme-colors" as myTheme;
+
+.text-success {
+  color: map.get(myTheme.$secondary, 60);
+}
+
+.text-error {
+  color: map.get(myTheme.$error, 60);
+}
