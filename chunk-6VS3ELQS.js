@@ -1,0 +1,1 @@
+import{Bb as s,Wa as o,kb as a,lb as n}from"./chunk-2665ERQA.js";var i=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=o({type:t,selectors:[["app-categorias"]],decls:2,vars:0,template:function(e,r){e&1&&(a(0,"p"),s(1,"categorias works!"),n())},encapsulation:2})};export{i as CategoriasComponent};
