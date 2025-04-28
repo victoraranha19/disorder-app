@@ -13,17 +13,26 @@ export const routes: Routes = [
   {
     title: 'Transações - Disorder',
     path: PATH.TRANSACOES,
-    component: TransacoesComponent,
+    loadComponent: () =>
+      import('./pages/transacoes/transacoes.component').then(
+        (c) => c.TransacoesComponent
+      ),
   },
   {
     title: 'Carteiras - Disorder',
     path: PATH.CARTEIRAS,
-    component: CarteirasComponent,
+    loadComponent: () =>
+      import('./pages/carteiras/carteiras.component').then(
+        (c) => c.CarteirasComponent
+      ),
   },
   {
     title: 'Categorias - Disorder',
     path: PATH.CATEGORIAS,
-    component: CategoriasComponent,
+    loadComponent: () =>
+      import('./pages/categorias/categorias.component').then(
+        (c) => c.CategoriasComponent
+      ),
   },
   { path: '', pathMatch: 'full', redirectTo: 'transacoes' },
 ];
