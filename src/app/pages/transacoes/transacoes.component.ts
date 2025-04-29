@@ -1,27 +1,15 @@
-import { CommonModule, CurrencyPipe, DatePipe } from '@angular/common';
-import { Component, LOCALE_ID } from '@angular/core';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { MatIconModule } from '@angular/material/icon';
+import { Component } from '@angular/core';
+import { TabelaTransacoesComponent } from '../../components/tabela-transacoes/tabela-transacoes.component';
 import { ITransacao } from '../../models/interfaces';
+import { MatDivider } from '@angular/material/divider';
 
 @Component({
-  imports: [
-    CommonModule,
-    DatePipe,
-    CurrencyPipe,
-
-    MatDividerModule,
-    MatExpansionModule,
-    MatIconModule,
-  ],
-  providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
+  imports: [TabelaTransacoesComponent, MatDivider],
   selector: 'app-transacoes',
   templateUrl: './transacoes.component.html',
   styleUrl: './transacoes.component.scss',
 })
 export class TransacoesComponent {
-  columnsToDisplay = ['icone', 'valor', 'descricao', 'data'];
   transacoes: ITransacao[] = [
     {
       data: new Date(),
@@ -34,7 +22,7 @@ export class TransacoesComponent {
     },
     {
       data: new Date(),
-      descricao: 'Salario',
+      descricao: 'Investimento',
       idCarteira: 1,
       idCategoria: 1,
       idTransacao: 1,
@@ -43,12 +31,20 @@ export class TransacoesComponent {
     },
     {
       data: new Date(),
-      descricao: 'Salario',
+      descricao: 'Consultoria',
       idCarteira: 1,
       idCategoria: 1,
       idTransacao: 1,
       tipo: 'C',
-      valor: -600,
+      valor: -150,
     },
   ];
+
+  onEdit(transacao: ITransacao) {
+    console.log('Edit', transacao);
+  }
+
+  onDelete(transacao: ITransacao) {
+    console.log('Delete', transacao);
+  }
 }

@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --base-href=disorder-app",
+    "deploy": "ng deploy --base-href=disorder-app",
     "watch": "ng build --watch --configuration development",
     "test": "ng test --watch=false --code-coverage"
   },

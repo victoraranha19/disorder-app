@@ -1,10 +1,20 @@
 @use "sass:map";
 @use "../../../theme-colors" as myTheme;
 
-.text-success {
-  color: map.get(myTheme.$secondary, 60);
+.button-img {
+  padding: 16px 8px;
+  background-color: map.get(myTheme.$primary, 90);
+  border-radius: 24px;
+  border: none;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
-.text-error {
-  color: map.get(myTheme.$error, 60);
+.button-img:focus {
+  border-color: map.get(myTheme.$primary, 10);
+}
+.button-img:hover {
+  border-radius: 24px;
+  background-color: map.get(myTheme.$primary, 80);
+  transition: background-color 0.3s ease-in-out;
 }

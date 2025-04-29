@@ -1,0 +1,49 @@
+@use "sass:map";
+@use "../../../theme-colors" as myTheme;
+
+.text-success {
+  color: map.get(myTheme.$secondary, 60);
+}
+.text-error {
+  color: map.get(myTheme.$error, 60);
+}
+.tabela {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: map.get(myTheme.$primary, 95);
+}
+
+// mat-table styles
+.mat-column-icon {
+  width: 80px;
+  text-align: center;
+}
+.mat-column-valor {
+  width: 120px;
+  text-align: right;
+}
+.mat-column-carteira {
+  text-align: center;
+}
+.mat-column-categoria {
+  text-align: center;
+}
+.mat-column-data {
+  width: 200px;
+  text-align: center;
+}
+.mat-column-acoes {
+  width: 120px;
+  text-align: center;
+}
+
+.mat-mdc-row .mat-mdc-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+}
+.mat-mdc-row:hover .mat-mdc-cell {
+  background-color: map.get(myTheme.$primary, 90);
+  border-color: map.get(myTheme.$primary, 10);
+  transition: background-color 0.3s ease-in-out;
+}

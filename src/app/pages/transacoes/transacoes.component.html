@@ -1,29 +1,41 @@
-<mat-divider></mat-divider>
+<div style="height: 100%; display: flex; flex-direction: column">
+  <div style="display: flex; justify-content: center; padding: 16px">
+    Selecao mes
+  </div>
 
-<mat-accordion>
-  <mat-expansion-panel
-    *ngFor="let transacao of transacoes"
-    style="margin: 16px 0"
+  <mat-divider />
+
+  <div
+    style="
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 32px;
+      padding: 16px 0;
+    "
   >
-    <mat-expansion-panel-header>
-      <mat-panel-title
-        [ngClass]="transacao.valor > 0 ? 'text-success' : 'text-error'"
-      >
-        <mat-icon>{{
-          transacao.valor >= 0 ? "arrow_upward" : "arrow_downward"
-        }}</mat-icon>
-        <span style="margin-left: 16px">{{
-          transacao.valor | currency : "BRL"
-        }}</span>
-      </mat-panel-title>
-      <mat-panel-description
-        style="display: flex; justify-content: space-between"
-      >
-        <span>{{ transacao.descricao }}</span>
-        <span>{{ transacao.data | date }}</span>
-      </mat-panel-description>
-    </mat-expansion-panel-header>
+    <div style="display: flex; flex-direction: column; gap: 32px">
+      <button type="button" class="button-img">
+        <img
+          src="assets/icons/receita.png"
+          alt="Seta para cima e dinheiro"
+          width="132"
+          height="84"
+        />
+      </button>
+      <button type="button" class="button-img">
+        <img
+          src="assets/icons/gasto.png"
+          alt="Seta para baixo e dinheiro"
+          width="132"
+          height="84"
+        />
+      </button>
+    </div>
 
-    <p>This is the primary content of the panel.</p>
-  </mat-expansion-panel>
-</mat-accordion>
+    <app-tabela-transacoes
+      [dataSource]="transacoes"
+      (editRowClick)="onEdit($event)"
+      (deleteRowClick)="onDelete($event)"
+    />
+  </div>
+</div>

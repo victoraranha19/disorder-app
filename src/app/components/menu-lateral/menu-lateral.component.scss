@@ -1,1 +1,18 @@
+@use "sass:map";
+@use "../../../theme-colors" as myTheme;
 
+.bg-primary {
+  background-color: map.get(myTheme.$primary, 30);
+  color: map.get(myTheme.$primary, 95);
+}
+
+.bg-light {
+  background-color: map.get(myTheme.$primary, 90);
+}
+
+.menu-lateral {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}

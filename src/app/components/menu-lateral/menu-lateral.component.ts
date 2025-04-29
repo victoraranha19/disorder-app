@@ -7,17 +7,19 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { Router } from '@angular/router';
 
+import { MatDividerModule } from '@angular/material/divider';
 import { PATH } from '../../app.routes';
 
 @Component({
   imports: [
     CommonModule,
 
-    MatSidenavModule,
-    MatToolbarModule,
     MatButtonModule,
+    MatDividerModule,
     MatIconModule,
     MatListModule,
+    MatSidenavModule,
+    MatToolbarModule,
   ],
   selector: 'app-menu-lateral',
   templateUrl: './menu-lateral.component.html',

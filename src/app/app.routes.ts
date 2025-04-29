@@ -11,7 +11,7 @@ export enum PATH {
 
 export const routes: Routes = [
   {
-    title: 'Transações - Disorder',
+    title: 'Transações',
     path: PATH.TRANSACOES,
     loadComponent: () =>
       import('./pages/transacoes/transacoes.component').then(
@@ -19,7 +19,7 @@ export const routes: Routes = [
       ),
   },
   {
-    title: 'Carteiras - Disorder',
+    title: 'Carteiras',
     path: PATH.CARTEIRAS,
     loadComponent: () =>
       import('./pages/carteiras/carteiras.component').then(
@@ -27,7 +27,7 @@ export const routes: Routes = [
       ),
   },
   {
-    title: 'Categorias - Disorder',
+    title: 'Categorias',
     path: PATH.CATEGORIAS,
     loadComponent: () =>
       import('./pages/categorias/categorias.component').then(

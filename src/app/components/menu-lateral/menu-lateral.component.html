@@ -1,34 +1,93 @@
 <mat-sidenav-container style="height: 100vh; width: 100vw">
-  <mat-sidenav #drawer mode="over">
-    <div style="display: flex">
-      <mat-icon style="margin: auto 16px">account_balance_wallet</mat-icon>
-      <h2 class="mat-h2">DISORDER APP</h2>
+  <mat-sidenav #drawer mode="over" class="bg-primary">
+    <div class="menu-lateral">
+      <div>
+        <div style="display: flex">
+          <mat-icon style="margin: auto 16px auto 24px">
+            account_balance_wallet
+          </mat-icon>
+          <h2 class="mat-h2">DISORDER APP</h2>
+        </div>
+        <div style="padding-bottom: 16px"><mat-divider /></div>
+
+        <mat-nav-list style="display: flex; flex-direction: column; gap: 8px">
+          <mat-list-item (click)="onMenuItemClick('transacoes', drawer)">
+            <div style="display: flex; align-items: center">
+              <mat-icon class="bg-primary" style="margin: auto 16px">
+                monetization_on
+              </mat-icon>
+              <span class="bg-primary">Transações</span>
+            </div>
+          </mat-list-item>
+          <mat-list-item (click)="onMenuItemClick('carteiras', drawer)">
+            <div style="display: flex; align-items: center">
+              <mat-icon class="bg-primary" style="margin: auto 16px">
+                credit_card
+              </mat-icon>
+              <span class="bg-primary">Carteiras</span>
+            </div>
+          </mat-list-item>
+          <mat-list-item (click)="onMenuItemClick('categorias', drawer)">
+            <div style="display: flex; align-items: center">
+              <mat-icon class="bg-primary" style="margin: auto 16px"
+                >style</mat-icon
+              >
+              <span class="bg-primary">Categorias</span>
+            </div>
+          </mat-list-item>
+          <mat-list-item (click)="onMenuItemClick('transacoes', drawer)">
+            <div style="display: flex; align-items: center">
+              <mat-icon class="bg-primary" style="margin: auto 16px">
+                supervisor_account
+              </mat-icon>
+              <span class="bg-primary">Consultoria</span>
+            </div>
+          </mat-list-item>
+        </mat-nav-list>
+      </div>
+      <div>
+        <div style="padding-bottom: 16px"><mat-divider /></div>
+        <mat-nav-list style="display: flex; flex-direction: column; gap: 8px">
+          <mat-list-item (click)="onMenuItemClick('carteiras', drawer)">
+            <div style="display: flex; align-items: center">
+              <mat-icon class="bg-primary" style="margin: auto 16px">
+                account_circle
+              </mat-icon>
+              <span class="bg-primary">Conta</span>
+            </div>
+          </mat-list-item>
+          <mat-list-item (click)="onMenuItemClick('categorias', drawer)">
+            <div style="display: flex; align-items: center">
+              <mat-icon class="bg-primary" style="margin: auto 16px">
+                exit_to_app
+              </mat-icon>
+              <span class="bg-primary">Sair</span>
+            </div>
+          </mat-list-item>
+        </mat-nav-list>
+      </div>
     </div>
-    <mat-nav-list>
-      <mat-list-item (click)="onMenuItemClick('transacoes', drawer)">
-        <mat-icon style="margin: auto 16px">monetization_on</mat-icon>
-        Transações
-      </mat-list-item>
-      <mat-list-item (click)="onMenuItemClick('carteiras', drawer)">
-        <mat-icon style="margin: auto 16px">credit_card</mat-icon>
-        Carteiras
-      </mat-list-item>
-      <mat-list-item (click)="onMenuItemClick('categorias', drawer)">
-        <mat-icon style="margin: auto 16px">style</mat-icon>
-        Categorias
-      </mat-list-item>
-    </mat-nav-list>
   </mat-sidenav>
 
-  <mat-sidenav-content>
-    <mat-toolbar style="gap: 16px">
-      <button mat-icon-button (click)="drawer.toggle()">
+  <mat-sidenav-content
+    style="
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    "
+    class="bg-light"
+  >
+    <mat-toolbar style="gap: 16px" class="bg-light">
+      <button mat-icon-button class="bg-primary" (click)="drawer.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
-      <h1 class="mat-h2">{{ titulo() }}</h1>
+      <h1>{{ titulo() }}</h1>
     </mat-toolbar>
 
-    <div style="padding: 0 32px">
+    <mat-divider></mat-divider>
+
+    <div style="height: 100%; padding: 0 32px">
       <ng-content />
     </div>
   </mat-sidenav-content>
