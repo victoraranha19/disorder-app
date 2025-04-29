@@ -1,10 +1,10 @@
 {
   "name": "disorder-app",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --base-href=/disorder-app/",
+    "build": "ng build --base-href=disorder-app",
     "watch": "ng build --watch --configuration development",
     "test": "ng test --watch=false --code-coverage"
   },
